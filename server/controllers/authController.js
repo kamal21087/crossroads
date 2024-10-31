@@ -3,7 +3,6 @@ const { User } = require('../models');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
-// controllers/authController.js
 exports.signup = async (req, res) => {
   try {
     const { username, password } = req.body;
