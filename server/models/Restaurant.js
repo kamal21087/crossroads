@@ -1,9 +1,9 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../config/db');
+const { DataTypes } = require('sequelize'); // import the DataTypes object from sequelize.
+const sequelize = require('../config/db'); // import the sequelize object from the db.js file in the config folder.
 
-const Restaurant = sequelize.define('Restaurant', {
-  name: {
-    type: DataTypes.STRING,
+const Restaurant = sequelize.define('Restaurant', { // define the Restaurant model with the specified fields.
+  name: { 
+    type: DataTypes.STRING, 
     allowNull: false,
   },
   address: {
@@ -20,4 +20,4 @@ const Restaurant = sequelize.define('Restaurant', {
   },
 });
 
-module.exports = Restaurant;
+module.exports = Restaurant; // export the Restaurant model.

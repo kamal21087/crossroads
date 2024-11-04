@@ -1,6 +1,6 @@
-require('dotenv').config();
+require('dotenv').config(); // import the dotenv module to read environment variables from a .env file. 
 
-module.exports = {
+module.exports = { // export the database configuration object. 
   development: {
     username: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
