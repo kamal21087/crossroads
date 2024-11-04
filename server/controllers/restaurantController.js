@@ -1,4 +1,6 @@
 const Restaurant = require('../models/Restaurant'); // import the Restaurant model from the models folder.
+const googleMapsService = require("../services/googleMapsService"); 
+const weatherService = require("../services/weatherService");
 
 exports.getRestaurants = async (req, res) => { // async function to get all restaurants. 
   try {
@@ -45,3 +47,22 @@ exports.deleteRestaurant = async (req, res) => { // async function to delete a r
     res.status(500).json({ error: 'Failed to delete restaurant' });
   }
 };
+
+
+async function getRestaurantDetails(req, res) {
+  const { currentLocation, restaurantAddress, restaurantLat, restaurantLon } = req.query;
+
+  try {
+    const travelTime = await googleMapsService.getTravelTime(currentLocation, restaurantAddress);
+    const weather = await weatherService.getWeather(restaurantLat, restaurantLon);
+
+    res.json({
+      travelTime,
+      weather
+    });
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch restaurant details" });
+  }
+}
+
+module.exports = { getRestaurantDetails };
