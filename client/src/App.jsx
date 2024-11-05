@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import HomePage from "../components/HomePage";
-import RestaurantList from "../components/RestaurantList";
-import RestaurantDetail from "../components/RestaurantDetail";
-import ParkList from "../components/ParkList";
-import ParkDetail from "../components/ParkDetail";
-import TheaterList from "../components/TheaterList";
-import TheaterDetail from "../components/TheaterDetail";
+import HomePage from "./components/HomePage";
+import RestaurantList from "./components/RestaurantList";
+import RestaurantDetail from "./components/RestaurantDetail";
+import ParkList from "./components/ParkList";
+import ParkDetail from "./components/ParkDetail";
+import TheaterList from "./components/TheaterList";
+import TheaterDetail from "./components/TheaterDetail";
 import './App.css';
 
 function App() {

@@ -27,16 +27,16 @@
 │   │   └── index.html             # HTML entry point for React app
 │   ├── src/
 │   │   ├── components/
-│   │   │   ├── HomePage.js
-│   │   │   ├── RestaurantList.js
-│   │   │   ├── AddRestaurant.js
-│   │   │   ├── RestaurantDetail.js
-│   │   │   ├── MovieTheaterList.js
-│   │   │   ├── AddMovieTheater.js
-│   │   │   ├── MovieTheaterDetail.js
-│   │   │   ├── ParkList.js
-│   │   │   ├── AddPark.js
-│   │   │   └── ParkDetail.js
+│   │   │   ├── HomePage.jsx
+│   │   │   ├── RestaurantList.jsx
+│   │   │   ├── AddRestaurant.jsx
+│   │   │   ├── RestaurantDetail.jsx
+│   │   │   ├── MovieTheaterList.jsx
+│   │   │   ├── AddMovieTheater.jsx
+│   │   │   ├── MovieTheaterDetail.jsx
+│   │   │   ├── ParkList.jsx
+│   │   │   ├── AddPark.jsx
+│   │   │   └── ParkDetail.jsx
 │   │   ├── services/
 │   │   │   ├── restaurantService.js
 │   │   │   ├── movieTheaterService.js

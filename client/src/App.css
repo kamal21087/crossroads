@@ -1,1 +1,112 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css";
+
+.project-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  color: white;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+  z-index: 3;
+}
+
+/* Main container styling */
+.home-container {
+  background-image: url('/nyc-crossroads.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 20px;
+  color: white;
+}
+
+.home-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+  z-index: 1;
+}
+
+.home-container > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Hero banner styling */
+.hero-banner {
+  margin-bottom: 20px;
+}
+
+/* Custom card styling */
+.custom-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.custom-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image styling for rounded corners */
+.custom-card .image img {
+  border-radius: 8px 8px 0 0;
+}
+
+/* Hero banner text color adjustments */
+.hero.is-primary .hero-body {
+  color: black
+}
+
+.title, .subtitle {
+  color: black;
+}
+
+/* Optional card text styling */
+.card-content p.title {
+  color: #4a90e2;
+}
+
+.card-content p.content {
+  color: #333333;
+}
+.list-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  margin: 10px 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #333333; /* Darker text color for readability */
+}
+
+.list-item h3 {
+  color: #0056b3; /* Dark blue for names */
+  font-weight: bold;
+}
+
+.list-item p {
+  color: #333333; /* Darker text for other details */
+}
+
+.list-item a {
+  color: #0056b3; /* Link color */
+  text-decoration: underline;
+}
+
+.restaurant-card {
+  background-color: #ffffff; /* Keep the white background */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
