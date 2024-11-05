@@ -1,15 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+
 function HomePage() {
   return (
     <div className="container">
-      <h1 className="title">Welcome to Favorite Places</h1>
+      <h1 className="title">Welcome to My Favorite Places</h1>
+      <div className="columns"> 
       <Link to="/restaurants" className="card">
         <div className="card-content">
           <p className="title">Favorite Restaurants</p>
         </div>
       </Link>
+      </div>
       <Link to="/parks" className="card">
         <div className="card-content">
           <p className="title">Favorite Parks</p>
