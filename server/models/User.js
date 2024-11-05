@@ -1,7 +1,14 @@
-module.exports = (sequelize, DataTypes) => { // export a function that defines the User model.
-  const User = sequelize.define('User', { // define the User model with the specified fields.
-    username: DataTypes.STRING,
-    password: DataTypes.STRING,
+module.exports = (sequelize, DataTypes) => {
+  const User = sequelize.define('User', {
+    username: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+    },
   });
   return User;
 };
