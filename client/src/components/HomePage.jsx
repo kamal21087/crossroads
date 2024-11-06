@@ -9,8 +9,7 @@ function Home() {
       <h1 className="project-title">Crossroads</h1>
       <section className="hero is-primary is-bold hero-banner">
         <div className="hero-body">
-          <p className="title">Welcome to Your Favorite Places</p>
-          <p className="subtitle">Explore your saved spots and find new favorites!</p>
+          <p className="title">Welcome to Your Favorite Places. Explore your saved spots and find new favorites!</p>
         </div>
       </section>
 
@@ -19,8 +18,6 @@ function Home() {
         <div className="column is-one-third">
           <Link to="/restaurants">
             <div className="card custom-card">
-              <div className="card-image">
-              </div>
               <div className="card-content">
                 <p className="title is-4">Favorite Restaurants</p>
                 <p className="content">Discover and add to your list of favorite dining spots.</p>
@@ -33,8 +30,6 @@ function Home() {
         <div className="column is-one-third">
           <Link to="/parks">
             <div className="card custom-card">
-              <div className="card-image">
-              </div>
               <div className="card-content">
                 <p className="title is-4">Favorite Parks</p>
                 <p className="content">Visit your favorite parks for relaxation and nature.</p>
@@ -45,11 +40,8 @@ function Home() {
 
         {/* Movie Theaters Card */}
         <div className="column is-one-third">
-          <Link to="/movie-theaters">
+          <Link to="/theaters">
             <div className="card custom-card">
-              <div className="card-image">
-              
-              </div>
               <div className="card-content">
                 <p className="title is-4">Favorite Movie Theaters</p>
                 <p className="content">Check out theaters where you can catch the latest films.</p>
