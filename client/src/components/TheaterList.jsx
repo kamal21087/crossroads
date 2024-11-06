@@ -4,7 +4,7 @@ import { theaterData } from "../services/theaterServices";
 
 function TheaterList() {
   return (
-    <div className="container">
+    <div className="content-container">
       <h1 className="title">Favorite Movie Theaters</h1>
       <ul>
         {theaterData.map((theater) => (

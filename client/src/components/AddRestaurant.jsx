@@ -1,6 +1,7 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { addRestaurant } from "../services/restaurantServices";
 
-function AddRestaurant() {
+const AddRestaurant = () => {
   const [restaurant, setRestaurant] = useState({
     name: '',
     address: '',
@@ -11,44 +12,34 @@ function AddRestaurant() {
   });
 
   const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setRestaurant({
-      ...restaurant,
-      [name]: type === 'checkbox' ? checked : value,
-    });
+    const { name, value } = e.target;
+    setRestaurant({ ...restaurant, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      await fetch('/api/restaurants/add', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(restaurant),
-      });
-      alert('Restaurant added!');
-    } catch (error) {
-      console.error('Error adding restaurant:', error);
-    }
+    addRestaurant(restaurant).then(() => alert('Restaurant added!'));
   };
 
   return (
-    <div>
-      <button onClick={() => setShowForm(!showForm)}>Add New Restaurant</button>
-      {showForm && (
-        <form onSubmit={handleSubmit}>
-          <input name="name" placeholder="Name" onChange={handleChange} />
-          <input name="address" placeholder="Address" onChange={handleChange} />
-          <input type="checkbox" name="rooftop" onChange={handleChange} /> Rooftop
-          <input name="website" placeholder="Website" onChange={handleChange} />
-          <input name="type" placeholder="Type" onChange={handleChange} />
-          <input name="imgUrl" placeholder="Image URL" onChange={handleChange} />
-          <button type="submit">Add Restaurant</button>
-        </form>
-      )}
-    </div>
+    <form onSubmit={handleSubmit}>
+      <input name="name" placeholder="Name" onChange={handleChange} required />
+      <input name="address" placeholder="Address" onChange={handleChange} required />
+      <input name="type" placeholder="Type" onChange={handleChange} required />
+      <input name="website" placeholder="Website" onChange={handleChange} />
+      <input name="imgUrl" placeholder="Image URL" onChange={handleChange} />
+      <label>
+        Rooftop:
+        <input
+          type="checkbox"
+          name="rooftop"
+          checked={restaurant.rooftop}
+          onChange={(e) => setRestaurant({ ...restaurant, rooftop: e.target.checked })}
+        />
+      </label>
+      <button type="submit">Add Restaurant</button>
+    </form>
   );
-}
-
+};
 
 export default AddRestaurant;
