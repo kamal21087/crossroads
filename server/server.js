@@ -1,4 +1,5 @@
 const express = require('express');
+const restaurantRoutes = require('./routes/restaurantRoute');
 const dotenv = require('dotenv');
 const authRoutes = require('./routes/auth');
 const locationRoutes = require('./routes/location');

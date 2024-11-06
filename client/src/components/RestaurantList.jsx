@@ -1,10 +1,10 @@
 import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { restaurantData } from "../services/restaurantServices";
-
 function RestaurantList() {
   return (
-    <div className="container">
+    <div className="content-container">
       <h1 className="title">Favorite Restaurants</h1>
       <ul>
         {restaurantData.map((restaurant) => (

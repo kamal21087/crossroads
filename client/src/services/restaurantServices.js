@@ -14,7 +14,7 @@ export const restaurantData = [
     name: "5 Burro Cafe",
     address: "72-05 Austin St, Forest Hills, NY 11375",
     rooftop: false,
-    website: "hhttps://5burrocafe.com/",
+    website: "https://5burrocafe.com/",
     type: "Mexican",
     imgUrl: "/images/5burro.jpg",
   },
