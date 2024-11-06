@@ -15,5 +15,6 @@ export const theaterData = [
     website: "https://drafthouse.com/",
     type: "Cinema",
   },
+  
   // Additional theaters
 ];

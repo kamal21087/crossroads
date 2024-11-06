@@ -4,7 +4,7 @@ import { parkData } from "../services/parkServices";
 
 function ParkList() {
   return (
-    <div className="container">
+    <div className="content-container">
       <h1 className="title">Favorite Parks</h1>
       <ul>
         {parkData.map((park) => (
