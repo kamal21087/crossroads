@@ -1,14 +1,26 @@
-const express = require('express'); // import the express module.
-const router = express.Router(); // create a new router object. A router object is an isolated instance of middleware and routes.     
-const restaurantController = require('../controllers/restaurantController'); // import the restaurant controller.
-const { getRestaurants, addRestaurant, getRestaurantById, deleteRestaurant } = require('../controllers/restaurantController'); // import the controller functions.  
-const authMiddleware = require('../middleware/authMiddleware'); // import the authentication middleware.
+// routes/restaurantRoutes.js
+const express = require('express');
+const router = express.Router();
+const Restaurant = require('../models/Restaurant');
 
-router.get('/details', restaurantController.getRestaurantDetails); // define the route for the restaurant details API.
-router.get('/', authMiddleware, getRestaurants); // define the routes for the restaurant API.  
-router.post('/', authMiddleware, addRestaurant); // use the authMiddleware to protect the routes. 
-router.get('/:id', authMiddleware, getRestaurantById); // define the routes for the restaurant API.
-router.delete('/:id', authMiddleware, deleteRestaurant); // use the authMiddleware to protect the routes.
+// Add a new restaurant
+router.post('/add', async (req, res) => {
+  try {
+    const newRestaurant = await Restaurant.create(req.body);
+    res.json(newRestaurant);
+  } catch (error) {
+    res.status(500).json({ message: 'Error adding restaurant', error });
+  }
+});
 
-module.exports = router;  
- 
+// Delete a restaurant
+router.delete('/delete/:id', async (req, res) => {
+  try {
+    await Restaurant.destroy({ where: { id: req.params.id } });
+    res.json({ message: 'Restaurant deleted successfully' });
+  } catch (error) {
+    res.status(500).json({ message: 'Error deleting restaurant', error });
+  }
+});
+
+module.exports = router;
