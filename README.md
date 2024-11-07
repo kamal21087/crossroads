@@ -27,7 +27,7 @@ It helps you keep track of places you like.
 
 
 ## Link to Deployed Application:
-ttps://crossroads-2.onrender.com
+https://crossroads-2.onrender.com/
 
 ## Link to Presentation Template:
 https://docs.google.com/presentation/d/1cxeIOWUiC6uOvXbfZA4Vi1NJA_eSyBJl3oBOk19_R2Y/edit#slide=id.g29f43f0a72_0_24
